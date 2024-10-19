@@ -15,31 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Create a new list item for the task
-        const li = document.createElement('li');
-        li.textContent = taskText;
+        const li = document.createElement('li'); // Step 1: Create new li element
+        li.textContent = taskText; // Step 2: Set its textContent to taskText
 
-        // Create a remove button for the task
-        const removeButton = document.createElement('button');
-        removeButton.textContent = "Remove";
-        removeButton.className = 'remove-btn';
+        // Create a new button element for removing the task
+        const removeButton = document.createElement('button'); // Step 3: Create remove button
+        removeButton.textContent = "Remove"; // Step 4: Set button text
+        removeButton.className = 'remove-btn'; // Step 5: Give it a class name
 
-        // Add click event to mark the task as completed
-        li.onclick = function() {
-            li.classList.toggle('completed'); // Toggle the 'completed' class on click
-        };
-
-        // Add click event to remove the task
+        // Assign an onclick event to the remove button
         removeButton.onclick = function(event) {
             event.stopPropagation(); // Prevent triggering the li click event
-            taskList.removeChild(li); // Remove the list item when button is clicked
+            taskList.removeChild(li); // Remove the li element from taskList
         };
 
-        // Append the remove button to the list item, then append the list item to the task list
-        li.appendChild(removeButton);
-        taskList.appendChild(li);
+        // Append the remove button to the li element
+        li.appendChild(removeButton); // Step 6: Append the button to the li
 
-        // Clear the input field after adding the task
-        taskInput.value = '';
+        // Append the li to taskList
+        taskList.appendChild(li); // Step 7: Append the li to the task list
+
+        // Clear the task input field
+        taskInput.value = ''; // Step 8: Clear the input field
     }
 
     // Add event listener to the Add Task button
