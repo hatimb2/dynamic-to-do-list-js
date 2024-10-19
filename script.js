@@ -23,8 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         removeButton.textContent = "Remove";
         removeButton.className = 'remove-btn';
 
+        // Add click event to mark the task as completed
+        li.onclick = function() {
+            li.classList.toggle('completed'); // Toggle the 'completed' class on click
+        };
+
         // Add click event to remove the task
-        removeButton.onclick = function() {
+        removeButton.onclick = function(event) {
+            event.stopPropagation(); // Prevent triggering the li click event
             taskList.removeChild(li); // Remove the list item when button is clicked
         };
 
@@ -46,4 +52,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
