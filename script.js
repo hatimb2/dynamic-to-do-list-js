@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener to the Add Task button
     addButton.addEventListener('click', () => {
         const taskText = taskInput.value.trim(); // Get and trim the input value
-        if (taskText === "") {
+        if (taskText === "classList.add") {
             alert("Please enter a task."); // Alert if the input is empty
             return;
         }
