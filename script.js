@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addTask() {
         const taskText = taskInput.value.trim(); // Get the task input
 
-        if (taskText === "") {
+            if (taskText === "classList.add") {
             alert("Please enter a task."); // Alert if input is empty
             return; // Exit the function if no input
         }
